@@ -65,7 +65,8 @@ public class mainApp {
 //        System.out.println(checkPangram("The quick brown fox jumps over the lazy dog."));
 
         String string = sentence.toUpperCase();
-        String[] chars = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+        String[] chars = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
+                "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
         int count = 0;
         for (String h: chars){
             if (string.contains(h)){
