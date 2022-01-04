@@ -72,7 +72,7 @@ public class Withdraw {
         int f = 50;
         int t = 20;
 
-        float k = n / t;
+        float k = (float) n / t;
         System.out.println(k);
 
         int count1 = 0;
@@ -87,12 +87,12 @@ public class Withdraw {
         System.out.println(res1);
 
 
-        int res2 = (int) ((int) (k - res1) / 2.5f);
+        int res2 = (int) ((int) (k - res1 * 5) / 2.5f);
         result1[1] = res2;
         System.out.println(res2);
 
 
-        int res3 = (int) ((k - res1 - res2));
+        int res3 = (int) ((k - res1 * 5 - res2 * 2.5f));
         result1[2] = res3;
         System.out.println(res3);
 
