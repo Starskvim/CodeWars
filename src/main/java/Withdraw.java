@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Withdraw {
     public static void main(String[] args) {
 
-        int[] result = withdraw2(470);
+        int[] result = withdraw2(990);
 
         //990 [[9, 1, 2]]> but was:<[[8, 1, 7]]
         //
@@ -80,26 +80,34 @@ public class Withdraw {
         int[] result1 = new int[3];
         int[] result2 = new int[3];
 
-
-
         float res1 = (int) (k / 5);
         result1[0] = (int) res1;
         System.out.println(res1);
-
 
         int res2 = (int) ((int) (k - res1 * 5) / 2.5f);
         result1[1] = res2;
         System.out.println(res2);
 
-
         int res3 = (int) ((k - res1 * 5 - res2 * 2.5f));
         result1[2] = res3;
         System.out.println(res3);
 
-
         result = result1;
 
         return result;
+    }
+
+    public static int[] withdraw3(int n){
+        int[] r = new int[3];
+        if(n % 20 == 0) {
+            r[1] = 0;
+        } else {
+            r[1] = 1;
+            n -= 50;
+        }
+        r[0] = n / 100;
+        r[2] = (n % 100) / 20;
+        return r;
     }
 }
 
