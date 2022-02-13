@@ -3,15 +3,28 @@ import java.util.Arrays;
 public class Withdraw {
     public static void main(String[] args) {
 
-        int[] result = withdraw2(990);
+        int[] result = withdraw(990);
 
+        // v2 v3
         //990 [[9, 1, 2]]> but was:<[[8, 1, 7]]
-        //
 
         System.out.println(Arrays.toString(result));
     }
 
-    public static int[] withdraw(int n) {
+    public static int[] withdraw(int n){
+        int[] r = new int[3];
+        if(n % 20 == 0) {
+            r[1] = 0;
+        } else {
+            r[1] = 1;
+            n -= 50;
+        }
+        r[0] = n / 100;
+        r[2] = (n % 100) / 20;
+        return r;
+    }
+
+    public static int[] withdraw3(int n) {
         int[] result = new int[3];
         int h = 100;
         int f = 50;
@@ -97,18 +110,6 @@ public class Withdraw {
         return result;
     }
 
-    public static int[] withdraw3(int n){
-        int[] r = new int[3];
-        if(n % 20 == 0) {
-            r[1] = 0;
-        } else {
-            r[1] = 1;
-            n -= 50;
-        }
-        r[0] = n / 100;
-        r[2] = (n % 100) / 20;
-        return r;
-    }
 }
 
 
